@@ -1,12 +1,9 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class PruebaModel extends CI_model
+class ZonasModel extends CI_model
 {
-	// $this->id;
-	// $this->nombre;
-	// $this->email:
-	// $this->status;
+	
 	function __construct()
 	{
 		$this->load->database();
@@ -14,11 +11,11 @@ class PruebaModel extends CI_model
 	public function getAll()
 	{
 		$this->db->select('*');
-		$this->db->from('usuarios');
+		$this->db->from('zonas');
 		$consulta = $this->db->get();
 		$respuesta = array(
 			'Error'=> FALSE,
-			'Mensaje'=> "el acceso a la tabla de usuarios es exitoso",
+			'Mensaje'=> "el acceso a la tabla de zonas es exitoso",
 			'data' => $consulta->result_array()
 		);
 		return json_encode($respuesta);

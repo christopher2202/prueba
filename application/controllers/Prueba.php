@@ -6,9 +6,9 @@ class Prueba extends RestController{
 	public function __construct(){
 		parent::__construct();
 		$this->load->database();
-		$this->load->Model('PruebaModel');
+		$this->load->Model('ZonasModel');
 	}
 	public function index_get(){
-		$this->response($this->PruebaModel->getAll(), RestController::HTTP_OK);
+		$this->response($this->ZonasModel->getAll(), RestController::HTTP_OK);
 	}
 }
